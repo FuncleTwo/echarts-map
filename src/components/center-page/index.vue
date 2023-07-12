@@ -1,20 +1,16 @@
-<!--
- * @Author: honghaosheng
- * @Date: 2023-07-12 16:16:52
- * @LastEditors: honghaosheng
- * @LastEditTime: 2023-07-12 17:07:28
--->
 <template>
-  <div ref="vue3" class="HelloWorld">
-    <aaa></aaa>
+  <div class="center-page">
+    <div class="page-map">
+      <echarts-map />
+    </div>
   </div>
 </template>
 <script lang='js'>
+import EchartsMap from './echarts-map.vue'
 import { onBeforeMount, onBeforeUpdate, onBeforeUnmount, onMounted, reactive, ref } from '@vue/composition-api'
-import aaa from './center-page/index'
 export default {
-  name: 'HelloWorld',
-  components: {aaa},
+  name: 'CenterPage',
+  components: { EchartsMap },
   props: {},
   // 通常都是放setup钩子函数里面用
   setup() {
@@ -28,7 +24,7 @@ export default {
     // mounted钩子函数
     onBeforeMount(() => {})
     // update钩子函数
-    onBeforeUpdate(() =>{})
+    onBeforeUpdate(() => {})
     // destory钩子函数
     onBeforeUnmount(() => {})
     return {
@@ -39,4 +35,16 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+.center-page{
+  width: 100%;
+  height: 100%;
+  .page-map{
+    width: 100%;
+    height: 80%;
+  }
+  .page-robot{
+    width: 100%;
+    height: 20%;
+  }
+}
 </style>
